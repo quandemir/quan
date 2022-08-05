@@ -2,17 +2,17 @@
 mysql workbench indirip kurmalısın ( https://www.mysql.com/products/workbench/ )
 ------------------------------------------------
 
-database oluşturuyoruz
+--database oluşturuyoruz--
    create database ogrenci
 ---------------------------------
    
    
-oluşturduğumuz databaseyi kullanıyoruz
-   use ogrenci
+--oluşturduğumuz databaseyi kullanıyoruz--
+  use ogrenci
    
 ------------------------------------
    
-tablo oluşturmalısın
+--tablo oluşturmalısın--
     CREATE TABLE ogrenci.ogrenci (
       id INT NOT NULL AUTO_INCREMENT,
       numara INT NOT NULL,
@@ -23,6 +23,6 @@ tablo oluşturmalısın
       
 ----------------------------
 
-bir veri ekleyelim 
+--bir veri ekleyelim --
 
 INSERT INTO ogrenci.ogrenci (numara, ad, soyad, telefon) VALUES ('6925', 'osman', 'kandemir', '05060637610');
