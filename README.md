@@ -1,6 +1,8 @@
 # quan
 mysql workbench indirip kurmalısın ( https://www.mysql.com/products/workbench/ )
 ------------------------------------------------
+veri tabanı şifresi Usmanım
+--------------
 
 --database oluşturuyoruz--
    create database ogrenci
