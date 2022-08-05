@@ -28,6 +28,32 @@ namespace quan
                     {
                         Console.WriteLine(i + ". numarasını griiniz");
                         ogr.Numara = Convert.ToInt32(Console.ReadLine());
+                        con.Open();
+                        string sql = "select numara  from ogrenci where numara=@x";
+                        MySqlCommand cm = new MySqlCommand(sql, con);
+                        cm.Parameters.AddWithValue("@x", ogr.Numara);
+                        MySqlDataReader dr = cm.ExecuteReader();
+                        
+                        if (dr.Read() == true) 
+                        {
+                            
+                            Console.WriteLine(ogr.Numara + "'ya sahip öğrenci var");
+                            con.Close();
+                        lkl:
+                            Console.WriteLine("NE YAPMAK İSTİYORSUNUZ");
+                            Console.WriteLine("1--TEKRAR NUMARA GİRMEK İSTİYORUM");
+                            Console.WriteLine("2--ÇIKIŞ YAPMAK İSTİYORUM ");
+                            string kjk = Console.ReadLine();
+                            if (kjk == "1") { goto b; }
+                            else if (kjk == "2") { Environment.Exit(0); }
+                            else
+                            {
+                                Console.WriteLine("hatalı tuşlama");
+                                goto lkl;
+                            }
+                        }
+                        con.Close();
+
                     }
                     catch(FormatException err )
                     {
@@ -52,7 +78,8 @@ namespace quan
                     }
                     
 
-                    vvv:
+
+                vvv:
                     Console.WriteLine(i + ". ad griiniz");
                     ogr.Ad = Convert.ToString(Console.ReadLine());
                     if (String.IsNullOrEmpty(ogr.Ad))
